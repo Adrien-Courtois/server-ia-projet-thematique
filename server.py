@@ -8,7 +8,10 @@ import os
 import datetime
 import hashlib
 import numpy as np
+import datetime
+import requests
 import json
+import calendar
 
 from flask import Flask, request
 
