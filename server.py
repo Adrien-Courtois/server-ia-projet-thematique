@@ -16,7 +16,7 @@ from dotenv import dotenv_values
 config = dotenv_values(".env")
 
 HEADERSIZE = 15
-ITER_NUMBER = 4
+ITER_NUMBER = 5
 LAST_TIME = 10
 
 current_GMT = time.gmtime()
@@ -110,7 +110,7 @@ def image_process(orig_image, creation_date, name):
         (xA, yA, xB, yB) = (int(xA*ratio), int(yA*ratio), int(xB*ratio), int(yB*ratio))
         cropped_image = orig_image[yA:yB, xA:xB]
         
-        results = reader.readtext(cropped_image, canvas_size=700, text_threshold=0.3, link_threshold=0.3, low_text=0.3)
+        results = reader.readtext(cropped_image, canvas_size=400, text_threshold=0.3, link_threshold=0.3, low_text=0.3)
 
         for (bbox, text, prob) in results:
             text = cleanup_text(text)
